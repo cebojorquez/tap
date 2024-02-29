@@ -1,4 +1,4 @@
-from flask import Flask, render_template #Es para importar flask
+from flask import Flask, render_template, request #Es para importar flask
 
 app = Flask(__name__) #creamos una instancia de flask en una variable llamada app(se puede llamar como sea)
 
@@ -7,8 +7,11 @@ app = Flask(__name__) #creamos una instancia de flask en una variable llamada ap
 def base():
     return render_template('base.html')
 
+@app.route('/', methods=['POST'])
 def index():
-    return render_template('index.html')
+    correo = request.form['email']
+    password = request.form['password']
+    return render_template('index.html',correo=correo,password=password)
 
 @app.route('/saludo/<name>')
 def saludo(name):
@@ -17,6 +20,11 @@ def saludo(name):
 @app.route('/saludo1/<name1>/<edad>')
 def saludo1(name1,edad):
     return render_template('saludo1.html',nombre=name1,edad=edad)
+
+@app.route('/login')
+def login():
+    
+    return render_template('login.html')
 app.run(debug=True) #es para correr la aplicación o sea nuestro sitio web en el servidor virtual
     
     
