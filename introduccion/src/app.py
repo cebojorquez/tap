@@ -3,15 +3,17 @@ from flask import Flask, render_template #Es para importar flask
 app = Flask(__name__) #creamos una instancia de flask en una variable llamada app(se puede llamar como sea)
 
 @app.route('/')#usamos un decorador(@) para crear una respuesta a la ruta / que es el index o página principal
-def Hola(): #creamos la función que va a responder al llamado a  la ruta /
-    return '<h1>Bienvenido al sitio web de Carlos Eduardo Bojórquez Ruiz</h1>' #es lo que devuelve la función es este caso solo un texto (hola mundo)
-@app.route('/plantilla')
-def plantilla():
-    data={
-        'titulo':'Página plantilla',
-        'mensaje':'PROYECTO'
-    } #Declaración de diccionario
-    return render_template('pagina1.html',data=data) #render_template es para renderizar la plantilla
+
+def index():
+    return render_template('index.html')
+
+@app.route('/saludo/<name>')
+def saludo(name):
+    return render_template('saludo.html',nombre=name)
+
+@app.route('/saludo1/<name1>/<edad>')
+def saludo1(name1,edad):
+    return render_template('saludo1.html',nombre=name1,edad=edad)
 app.run(debug=True) #es para correr la aplicación o sea nuestro sitio web en el servidor virtual
     
     
