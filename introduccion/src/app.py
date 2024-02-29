@@ -4,6 +4,9 @@ app = Flask(__name__) #creamos una instancia de flask en una variable llamada ap
 
 @app.route('/')#usamos un decorador(@) para crear una respuesta a la ruta / que es el index o página principal
 
+def base():
+    return render_template('base.html')
+
 def index():
     return render_template('index.html')
 
