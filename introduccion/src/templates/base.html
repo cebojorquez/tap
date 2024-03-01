@@ -9,26 +9,28 @@
   </head>
 <body>  
   <div class="container">
-  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-    <div class="col-md-3 mb-2 mb-md-0">
-      <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-        <svg class="bi" width="60" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-4">EVALUACION PARCIAL I</span>
       </a>
-    </div>
-
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="" class="nav-link px-2 link-secondary">Boton 1</a></li>
-      <li><a href="" class="nav-link px-2">Boton 2</a></li>
-      <li><a href="/" class="nav-link px-2">Boton 3</a></li>
-      <li><a href="" class="nav-link px-2">Boton 4</a></li>
-      <li><a href="" class="nav-link px-2">Boton 5</a></li>
-    </ul>
-
-    <div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-primary me-2">Login</button>
-      <button type="button" class="btn btn-primary">Sign-up</button>
-    </div>
-    <br> <br>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/#" class="nav-link active" aria-current="page">Inicio</a></li>
+        <li class="nav-item"><a href="/Habilidades" class="nav-link">Habilidades</a></li>
+        <li class="nav-item"><a href="/Datos" class="nav-link">Datos</a></li>
+      </ul>
+    </header>
+  </div>
+    <br>
+    <div class="col col-md-4">
+    <form action="/" method="post">
+    <div class="login nombre">
+    <label for="name">Introduce tu nombre:</label>
+    <input type="text" id="name" name="name" size="10" />
+   </div>
+   <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
   <div class="row">
     <div class="col">
         {% block contenido %}
@@ -38,4 +40,11 @@
   </header>
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+<footer>
+  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+    <li><a href="/#" class="nav-link px-2 link-secondary">Inicio</a></li>
+    <li><a href="/Habilidades" class="nav-link px-2">Habilidades</a></li>
+    <li><a href="/Datos" class="nav-link px-2">Datos</a></li>
+  </ul>
+  </footer>
 </html>
