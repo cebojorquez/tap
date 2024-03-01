@@ -20,8 +20,4 @@ def datos():
 def habilidades():
     return render_template('habilidades.html')
 
-app.run(debug=True) #es para correr la aplicación o sea nuestro sitio web en el servidor virtual
-    
-    
-    #recuerda que para verlo solo debemos entrar a la dirección 127.0.0.1:5000 en cualquier navegador
-    #es importante crear la carpeta templates porque ahi va flask a intentar buscar el archivo de la plantilla.
+app.run(debug=True)
